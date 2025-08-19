@@ -55,10 +55,10 @@ const pageContent = {
     { name: "Memorials", link: "/memorials/", icon: "memorial", count: "12+" },
     { name: "Parks", link: "/parks/", icon: "park", count: "8+" },
     { name: "Gardens", link: "/gardens/", icon: "park", count: "5+" },
-    { name: "Zoos", link: "/zoos/", icon: "zoo", count: "3+" },
-    { name: "Islands", link: "/islands/", icon: "island", count: "4+" },
-    { name: "Lakes", link: "/lakes/", icon: "park", count: "6+" },
-    { name: "Rivers", link: "/rivers/", icon: "park", count: "3+" },
+    { name: "Zoos", link: "/zoo/", icon: "zoo", count: "3+" },
+    { name: "Islands", link: "/island/", icon: "island", count: "4+" },
+    { name: "Beach", link: "/beach/", icon: "beach", count: "6+" },
+    { name: "Rivers", link: "/river/", icon: "park", count: "3+" },
     { name: "Exhibits", link: "/exhibits/", icon: "theater", count: "25+" },
   ],
   topAttractions: [
@@ -162,9 +162,9 @@ const WashingtonDCAttractionsPage = () => {
                         className="text-4xl"
                       />
                     </div>
-                    <div className="text-xs bg-gray-100 text-gray-600 px-3 py-1 rounded-full font-semibold">
+                    {/* <div className="text-xs bg-gray-100 text-gray-600 px-3 py-1 rounded-full font-semibold">
                       {category.count}
-                    </div>
+                    </div> */}
                   </div>
 
                   <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-red-600 transition-colors duration-300">

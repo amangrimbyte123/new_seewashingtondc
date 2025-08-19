@@ -75,47 +75,49 @@ export default function Header() {
     }
   };
 
-  // Categories for mega menu
   const categories = {
     attractions: [
-      { name: "Museums", href: "/attractions/museums", icon: "museum" },
-      { name: "Monuments", href: "/attractions/monuments", icon: "monument" },
-      { name: "Memorials", href: "/attractions/memorials", icon: "memorial" },
-      { name: "Parks", href: "/attractions/parks", icon: "park" },
+      { name: "Museums", href: "/museums", icon: "museum" },
+      { name: "Monuments", href: "/monuments", icon: "monument" },
+      { name: "Memorials", href: "/memorials", icon: "memorial" },
+      { name: "Parks", href: "/parks", icon: "park" },
     ],
     activities: [
       {
         name: "Water Sports",
-        href: "/things-to-do/water-sports",
+        href: "/water-sports",
         icon: "water",
       },
       {
         name: "Fishing Spots",
-        href: "/things-to-do/fishing-spots",
+        href: "/fishing-spot",
         icon: "fish",
       },
-      { name: "Hiking", href: "/things-to-do/hiking", icon: "hiking" },
-      { name: "Beaches", href: "/things-to-do/beaches", icon: "beach" },
-      { name: "Islands", href: "/things-to-do/islands", icon: "island" },
+      { name: "Spa", href: "/spa", icon: "spa" },
+      { name: "Beaches", href: "/beach", icon: "beach" },
+      { name: "Islands", href: "/island", icon: "island" },
     ],
     dining: [
       {
         name: "Restaurants",
-        href: "/eat-and-drink/restaurants",
+        href: "/restaurants",
         icon: "restaurant",
       },
-      { name: "Bars", href: "/eat-and-drink/bars", icon: "bar" },
-      { name: "Cafes", href: "/eat-and-drink/cafes", icon: "cafe" },
+      { name: "Bars", href: "/bar", icon: "bar" },
+      { name: "Cuisine", href: "/cuisine", icon: "cafe" },
     ],
     entertainment: [
-      { name: "Sports Teams", href: "/entertainment/sports", icon: "sports" },
-      { name: "Tickets", href: "/entertainment/tickets", icon: "ticket" },
-      { name: "Hotels", href: "/entertainment/hotels", icon: "hotel" },
+      { name: "Theaters ", href: "/theater/", icon: "theater" },
+      { name: "Zoo", href: "/Zoo/", icon: "zoo" },
+      { name: "Golf Courses", href: "/golf-courses/", icon: "golf" },
+      { name: "Nightlife & Bars", href: "/bar/", icon: "bar" },
     ],
   };
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 bg-white shadow-md py-2`}>
+    <header
+      className={`fixed top-0 w-full z-50 transition-all duration-300 bg-white shadow-md py-2`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
@@ -170,7 +172,7 @@ export default function Header() {
                 onClick={() => handleMegaMenu("activities")}
                 className="inline-flex items-center px-3 py-2 text-sm font-medium rounded-full transition-all text-gray-700 hover:bg-gray-100"
               >
-                Activities
+                Things To Do
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className={`h-4 w-4 ml-1 transition-transform duration-200 ${
@@ -247,6 +249,13 @@ export default function Header() {
             >
               About
             </Link>
+
+            {/* <Link
+              href="/weather"
+              className="inline-flex items-center px-3 py-2 text-sm font-medium rounded-full transition-all text-gray-700 hover:bg-gray-100"
+            >
+              Weather
+            </Link> */}
 
             <Link
               href="/contact"
@@ -493,6 +502,15 @@ export default function Header() {
               >
                 About
               </Link>
+
+              <Link
+                href="/weather"
+                className="block p-3 font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Weather
+              </Link>
+
               <Link
                 href="/contact"
                 className="block p-3 font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"

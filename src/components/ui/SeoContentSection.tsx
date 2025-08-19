@@ -14,7 +14,7 @@ import {
 import { GiCherry } from "react-icons/gi";
 import { MdDirectionsBus, MdFlight } from "react-icons/md";
 
-const SeoContentSection = () => {
+const SeoContentSection = ({hidden}:{hidden?:boolean}) => {
   return (
     <div>
       {" "}
@@ -22,74 +22,62 @@ const SeoContentSection = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="prose prose-lg max-w-none">
             {/* Best Time to Visit Section */}
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-6">
-                <FaCalendarAlt className="w-8 h-8 text-primary" />
-              </div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Best Time to Visit Washington, DC
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Discover the ideal season for your trip and experience DC at its
-                finest
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
-              {/* Summer Card */}
-              <div className="bg-gradient-to-br from-primary/5 to-primary/10 p-8 rounded-2xl border border-primary/20 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
-                    <FaThermometerHalf className="w-6 h-6 text-primary" />
+             {/* Best Time to Visit Section */}
+             {!hidden && (
+              <>
+                <div className="text-center mb-16">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-6">
+                    <FaCalendarAlt className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900">Summer</h3>
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                    Best Time to Visit Washington, DC
+                  </h2>
+                  <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Discover the ideal season for your trip and experience DC at its finest
+                  </p>
                 </div>
-                <p className="text-gray-700 mb-4">
-                  Washington, DC is a city with something to offer year-round,
-                  but the best time to visit depends on what you want to
-                  experience. While summer is popular, especially with the
-                  Fourth of July celebrations, the city’s heat and humidity can
-                  make outdoor sightseeing a challenge.
-                </p>
-              </div>
 
-              {/* Fall Card */}
-              <div className="bg-gradient-to-br from-secondary/5 to-secondary/10 p-8 rounded-2xl border border-secondary/20 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mr-4">
-                    <FaLeaf className="w-6 h-6 text-secondary" />
+                <div className="grid md:grid-cols-3 gap-8 mb-16">
+                  {/* Summer Card */}
+                  <div className="bg-gradient-to-br from-primary/5 to-primary/10 p-8 rounded-2xl border border-primary/20 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <div className="flex items-center mb-4">
+                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                        <FaThermometerHalf className="w-6 h-6 text-primary" />
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900">Summer</h3>
+                    </div>
+                    <p className="text-gray-700 mb-4">
+                      Washington, DC is a city with something to offer year-round, but the best time to visit depends on what you want to experience. While summer is popular, especially with the Fourth of July celebrations, the city’s heat and humidity can make outdoor sightseeing a challenge.
+                    </p>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900">Fall</h3>
-                </div>
-                <p className="text-gray-700 mb-4">
-                  For a more comfortable visit, consider planning your trip
-                  during fall. With cooler temperatures and vibrant foliage,
-                  fall is one of the best seasons to explore DC. The city comes
-                  alive with local events like Adams Morgan Day and the H Street
-                  Festival, offering an authentic taste of DC's culture and
-                  neighborhoods.
-                </p>
-              </div>
 
-              {/* Spring Card */}
-              <div className="bg-gradient-to-br from-primary/5 to-secondary/5 p-8 rounded-2xl border border-primary/20 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
-                    <GiCherry className="w-6 h-6 text-primary" />
+                  {/* Fall Card */}
+                  <div className="bg-gradient-to-br from-secondary/5 to-secondary/10 p-8 rounded-2xl border border-secondary/20 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <div className="flex items-center mb-4">
+                      <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mr-4">
+                        <FaLeaf className="w-6 h-6 text-secondary" />
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900">Fall</h3>
+                    </div>
+                    <p className="text-gray-700 mb-4">
+                      For a more comfortable visit, consider planning your trip during fall. With cooler temperatures and vibrant foliage, fall is one of the best seasons to explore DC. The city comes alive with local events like Adams Morgan Day and the H Street Festival, offering an authentic taste of DC's culture and neighborhoods.
+                    </p>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900">Spring</h3>
-                </div>
-                <p className="text-gray-700 mb-4">
-                  If you're a fan of beautiful springtime blooms, consider
-                  visiting in spring to catch the peak of the cherry blossom
-                  season. The National Cherry Blossom Festival, held every year,
-                  is one of the most stunning sights in the city, drawing
-                  visitors from all over the world.
-                </p>
-              </div>
-            </div>
 
-            {/* Getting Around Section */}
+                  {/* Spring Card */}
+                  <div className="bg-gradient-to-br from-primary/5 to-secondary/5 p-8 rounded-2xl border border-primary/20 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <div className="flex items-center mb-4">
+                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                        <GiCherry className="w-6 h-6 text-primary" />
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900">Spring</h3>
+                    </div>
+                    <p className="text-gray-700 mb-4">
+                      If you're a fan of beautiful springtime blooms, consider visiting in spring to catch the peak of the cherry blossom season. The National Cherry Blossom Festival, held every year, is one of the most stunning sights in the city, drawing visitors from all over the world.
+                    </p>
+                  </div>
+                </div>
+                   {/* Getting Around Section */}
             <div className="text-center mb-12">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-secondary/10 rounded-full mb-6">
                 <FaMapMarkerAlt className="w-8 h-8 text-secondary" />
@@ -98,9 +86,13 @@ const SeoContentSection = () => {
                 Getting Around Washington, DC
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Washington, DC is known for being a well-connected city, making it easy for both locals and visitors to navigate. Whether you're flying in, taking a train, or hopping on the Metro, there are plenty of transportation options to explore the nation’s capital.
+                Washington, DC is known for being a well-connected city, making it easy for both locals and visitors to navigate. Whether you're flying in, taking a train, or hopping on the Metro, there are plenty of transportation options to explore the nation’s capital.
               </p>
             </div>
+              </>
+            )}
+
+         
 
             <div className="space-y-8">
               {/* Airports */}

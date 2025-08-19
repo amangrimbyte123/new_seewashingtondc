@@ -11,6 +11,8 @@ import {
   FaMapMarkedAlt,
   FaArrowRight,
   FaCalendarAlt,
+  FaTree,
+  FaGolfBall 
 } from "react-icons/fa"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -47,37 +49,37 @@ const pageContent = {
     {
       title: "Water Sports",
       icon: FaWater,
-      link: "/things-to-do/water-sports",
+      link: "/water-sports",
       description: "Kayaking, paddleboarding, and boating on the Potomac River",
     },
     {
       title: "Fishing Spots",
       icon: FaFish,
-      link: "/things-to-do/fishing-spots",
+      link: "/fishing-spot",
       description: "Best fishing locations along DC waterways",
     },
     {
-      title: "Hiking",
-      icon: FaHiking,
-      link: "/things-to-do/hiking",
+      title: "Garden",
+      icon: FaTree,
+      link: "/garden",
       description: "Scenic trails in Rock Creek Park and beyond",
     },
     {
       title: "Beaches",
       icon: FaUmbrellaBeach,
-      link: "/things-to-do/beaches",
+      link: "/beach",
       description: "Waterfront areas and beach-like experiences",
     },
     {
-      title: "Sports Teams & Tickets",
-      icon: FaTicketAlt,
-      link: "/things-to-do/sports-teams",
-      description: "Professional sports events and tickets",
+      title: "Golf Courses",
+      icon: FaGolfBall,
+      link: "/golf-courses",
+      description: "Professional Golf Courses",
     },
     {
       title: "Spas",
       icon: FaSpa,
-      link: "/things-to-do/spas",
+      link: "/spas",
       description: "Relaxation and wellness centers",
     },
   ],
@@ -225,18 +227,6 @@ export default function ThingsToDoPage() {
             ))}
           </div>
 
-          <div className="text-center">
-            <Link href={pageContent.highlights.ctaLink}>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 bg-transparent"
-              >
-                {pageContent.highlights.ctaText}
-                <FaArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-          </div>
         </div>
       </section>
 

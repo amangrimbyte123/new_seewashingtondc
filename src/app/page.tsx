@@ -101,7 +101,7 @@ export default function HomePage() {
       </section>
       
       {/* Why Washington DC is a Must-Visit City Section */}
-      <section className="py-20 px-4 md:px-8 relative overflow-hidden">
+      <section className="py-10 px-4 md:px-8 relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Content Side */}
@@ -124,18 +124,10 @@ export default function HomePage() {
               {/* CTA Button */}
               <Link 
                 href={whyVisitDC.ctaLink} 
-                className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-white font-semibold rounded-full shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:scale-105 hover:from-secondary hover:to-primary group"
+                className="inline-flex items-center gap-2 text-sm md:text-base px-8 py-4 bg-secondary text-white font-semibold rounded-full shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:scale-105 hover:from-secondary hover:to-primary group"
               >
                 {whyVisitDC.ctaText}
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" 
-                  fill="none" 
-                  viewBox="0 0 24 24" 
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
+               
               </Link>
             </div>
             
@@ -153,30 +145,13 @@ export default function HomePage() {
                   className="w-full h-full object-cover"
                 />
                 
-                {/* Floating elements for visual interest */}
-                <div className="absolute top-6 right-6 z-30">
-                  <div className="bg-white/90 backdrop-blur-md rounded-full p-3 shadow-lg">
-                    <AppIcon name="museum" className="text-2xl" />
-                  </div>
-                </div>
-                <div className="absolute bottom-6 left-6 z-30">
-                  <div className="bg-white/90 backdrop-blur-md rounded-full p-3 shadow-lg">
-                    <AppIcon name="monument" className="text-2xl" />
-                  </div>
-                </div>
                 
                 {/* Decorative elements */}
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 border-2 border-white/20 rounded-full z-30"></div>
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 border-2 border-white/30 rounded-full z-30"></div>
               </div>
               
-              {/* Floating stats card */}
-              <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-4 border border-gray-100 z-40">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">{whyVisitDC.stats.number}</div>
-                  <div className="text-sm text-gray-600">{whyVisitDC.stats.label}</div>
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>
@@ -187,7 +162,7 @@ export default function HomePage() {
       </section>
       
       {/* When Are You Looking to Visit Washington DC Section */}
-      <section className="py-20 px-4 md:px-8 bg-gradient-to-br from-gray-50 to-blue-50/30 relative overflow-hidden ">
+      <section className="py-10 px-4 md:px-8 bg-gradient-to-br from-gray-50 to-blue-50/30 relative overflow-hidden ">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <span className="px-4 py-1 bg-gradient-to-r from-primary to-secondary text-white rounded-full text-xs font-medium mb-6 inline-block shadow-sm">
@@ -253,18 +228,9 @@ export default function HomePage() {
           <div className="text-center">
             <Link 
               href={seasonalGuide.ctaLink}
-              className="inline-flex items-center gap-3 px-8 py-4 bg-secondary text-white font-semibold rounded-full shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:scale-105 group"
+              className="inline-flex items-center text-sm md:text-base gap-3 px-8 py-4 bg-secondary text-white font-semibold rounded-full shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:scale-105 group"
             >
               <span>{seasonalGuide.ctaText}</span>
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" 
-                fill="none" 
-                viewBox="0 0 24 24" 
-                stroke="currentColor"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
             </Link>
           </div>
         </div>
@@ -277,7 +243,7 @@ export default function HomePage() {
     
 
       {/* Why Choose Washington, DC Over Other Cities */}
-      <section className="py-20 px-4 md:px-8 relative overflow-hidden">
+      <section className="py-10 px-4 md:px-8 relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
           {/* Header Section */}
           <div className="text-center mb-16">
@@ -398,23 +364,7 @@ export default function HomePage() {
           </div>
           
           {/* CTA Section */}
-          <div className="text-center">
-            <Link 
-              href={bookYourStay.ctaLink} 
-              className="inline-flex items-center gap-3 px-10 py-5 bg-secondary text-white font-semibold rounded-full shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:scale-105 group"
-            >
-              <span className="text-lg">{bookYourStay.ctaText}</span>
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                className="h-6 w-6 group-hover:translate-x-1 transition-transform duration-300" 
-                fill="none" 
-                viewBox="0 0 24 24" 
-                stroke="currentColor"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </Link>
-          </div>
+        
         </div>
         
         {/* Background decorative elements */}
@@ -423,7 +373,7 @@ export default function HomePage() {
       </section>
       
         {/* What's Popular Right Now in Washington, DC */}
-        <section className="py-16 px-4 md:px-8 max-w-7xl mx-auto relative overflow-hidden ">
+        <section className="py-10 px-4 md:px-8 max-w-7xl mx-auto relative overflow-hidden ">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/5 to-transparent opacity-70 -z-10"></div>
         
         <div className="mb-8 relative">
@@ -438,7 +388,7 @@ export default function HomePage() {
 
         <div className="mt-8 text-center">
           <Link 
-            href="/entertainment"
+            href="/attractions"
             className="inline-flex items-center gap-2 px-6 py-3 bg-primary to-secondary text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
           >
             <span>Discover What's Happening Right Now →</span>

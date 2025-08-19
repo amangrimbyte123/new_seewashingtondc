@@ -73,7 +73,7 @@ export default function CategoryHeader({
             <span className="px-4 py-1 bg-white/10 text-white rounded-full text-sm font-medium mb-3 inline-block backdrop-blur-sm">
               Explore DC
             </span>
-            <h1 className="text-4xl md:text-5xl font-bold mb-3">{title}</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-3 capitalize">{title}</h1>
             {description && (
               <p className="text-xl max-w-3xl mx-auto text-white/90">{description}</p>
             )}
@@ -96,7 +96,7 @@ export default function CategoryHeader({
       </div>
       
       {aiIntroText && (
-        <div className="max-w-4xl mx-auto mt-6 px-4 py-6 bg-white/80 backdrop-blur-sm rounded-xl shadow-md border border-primary/20 -mt-16 relative z-10">
+        <div className="max-w-4xl mx-auto mt-6 px-4 py-6 bg-white/80 backdrop-blur-sm rounded-xl shadow-md border border-primary/20 md:-mt-16 relative z-10">
           <p className="text-gray-700 leading-relaxed">{aiIntroText}</p>
         </div>
       )}

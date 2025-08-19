@@ -6,11 +6,10 @@
     "ctaLink": "/entertainment/events/"
   },
   "categories": [
-    { "name": "Theaters & Performances", "href": "/entertainment/theater/", "icon": "theater" },
-    { "name": "Concerts & Live Music", "href": "/entertainment/concerts/", "icon": "music" },
-    { "name": "Events & Festivals", "href": "/entertainment/events/", "icon": "festival" },
-    { "name": "Comedy & Improv", "href": "/entertainment/comedy/", "icon": "comedy" },
-    { "name": "Nightlife & Bars", "href": "/entertainment/nightlife/", "icon": "bar" }
+    { "name": "Theaters & Performances", "href": "/theater/", "icon": "theater" },
+    { "name": "Zoo", "href": "/Zoo/", "icon": "zoo" },
+    { "name": "Golf Courses", "href": "/golf-courses/", "icon": "golf" },
+    { "name": "Nightlife & Bars", "href": "/bar/", "icon": "bar" }
   ],
   "highlights": [
     {

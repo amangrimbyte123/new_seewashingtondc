@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from 'react';
-import StaticMap from './StaticMap';
+import StaticMap from './page';
 
 interface InteractiveMapProps {
   center?: { lat: number; lng: number };
@@ -87,10 +87,7 @@ export default function InteractiveMap({
     };
   }, [center, zoom]);
 
-  if (mapError) {
-    return <StaticMap className={className} />;
-  }
-
+ 
   return (
     <div 
       ref={mapRef} 

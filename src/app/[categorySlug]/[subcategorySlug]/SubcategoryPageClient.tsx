@@ -1,33 +1,35 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
 
 // Components
-import CategoryHeader from '@/components/categories/CategoryHeader';
-import ListingFilters from '@/components/listings/ListingFilters';
-import ListingGrid from '@/components/listings/ListingGrid';
+import CategoryHeader from "@/components/categories/CategoryHeader";
+import ListingFilters from "@/components/listings/ListingFilters";
+import ListingGrid from "@/components/listings/ListingGrid";
 
 // Types
-import { Place, Subcategory } from '@/lib/types';
+import { Place, Subcategory } from "@/lib/types";
+import SubcategoryNotFound from "@/components/layout/SubcategoryNotFound";
 
 interface SubcategoryPageClientProps {
   initialSubcategory: Subcategory | null;
   initialPlaces: Place[];
   subcategorySlug: string;
   categorySlug: string;
+  site_description?: string;
 }
 
 export default function SubcategoryPageClient({
   initialSubcategory,
   initialPlaces,
   subcategorySlug,
-  categorySlug
+  categorySlug,
 }: SubcategoryPageClientProps) {
   const [places, setPlaces] = useState<Place[]>(initialPlaces);
   const [filteredPlaces, setFilteredPlaces] = useState<Place[]>(initialPlaces);
-  const [subcategory] = useState(initialSubcategory);
+  const [subcategory] = useState<any>(initialSubcategory);
 
   // Update filtered places when places change
   useEffect(() => {
@@ -43,23 +45,24 @@ export default function SubcategoryPageClient({
 
     // Apply price filter
     if (filters.price.length > 0) {
-      filtered = filtered.filter(place => 
-        place.price_range && filters.price.includes(place.price_range)
+      filtered = filtered.filter(
+        (place) =>
+          place.price_range && filters.price.includes(place.price_range)
       );
     }
 
     // Apply rating filter
     if (filters.rating !== null) {
-      filtered = filtered.filter(place => 
-        place.rating && place.rating >= filters.rating!
+      filtered = filtered.filter(
+        (place) => place.rating && place.rating >= filters.rating!
       );
     }
 
     // Apply amenities filter
     if (filters.amenities.length > 0) {
-      filtered = filtered.filter(place => 
-        filters.amenities.every(amenity => 
-          place.amenities?.some(a => a.name === amenity)
+      filtered = filtered.filter((place) =>
+        filters.amenities.every((amenity) =>
+          place.amenities?.some((a) => a.name === amenity)
         )
       );
     }
@@ -69,55 +72,38 @@ export default function SubcategoryPageClient({
 
   if (!subcategory) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white flex items-center justify-center px-4 py-12">
-        <div className="max-w-lg w-full text-center">
-          <div className="mb-8 animate-bounce">
-            <svg
-              className="mx-auto h-24 w-24 text-blue-500"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M12 14h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-          </div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Subcategory Not Found</h2>
-          <p className="text-gray-600 mb-8">The subcategory you're looking for doesn't exist or has been removed.</p>
-          <Link
-            href="/"
-            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
-          >
-            Return Home
-          </Link>
-        </div>
-      </div>
+      <>
+        <SubcategoryNotFound />
+      </>
     );
   }
 
   return (
     <div className="min-h-screen">
-      <CategoryHeader 
+      <CategoryHeader
         title={subcategory.name}
         description={`Explore ${subcategory.name} in Washington DC`}
         imageUrl={subcategory.image_url}
       />
-      
+
       {/* Breadcrumb */}
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-6">
         <nav className="text-sm">
           <ol className="flex items-center space-x-2">
             <li>
-              <Link href="/" className="text-blue-600 hover:text-blue-800 transition">Home</Link>
+              <Link
+                href="/"
+                className="text-blue-600 hover:text-blue-800 transition"
+              >
+                Home
+              </Link>
             </li>
             <li className="flex items-center space-x-2">
               <span className="text-gray-500">/</span>
-              <Link href={`/${categorySlug}`} className="text-blue-600 hover:text-blue-800 transition">
+              <Link
+                href={`/${categorySlug}`}
+                className="text-blue-600 hover:text-blue-800 transition"
+              >
                 {subcategory.categoryName}
               </Link>
             </li>
@@ -128,25 +114,32 @@ export default function SubcategoryPageClient({
           </ol>
         </nav>
       </div>
-      
+
       {/* Listings section */}
       <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
         <div className="mb-8">
-          <span className="px-4 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium mb-3 inline-block">Places</span>
-          <h2 className="text-3xl font-bold mb-2">{filteredPlaces.length} Places in {subcategory.name}</h2>
-          <p className="text-lg text-gray-600 max-w-2xl">Browse through our curated selection of places</p>
+          <span className="px-4 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium mb-3 inline-block">
+            Places
+          </span>
+          <h2 className="text-3xl font-bold mb-2">
+            {filteredPlaces.length} Places in {subcategory.name}
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl">
+            {subcategory?.site_description ||
+              "Discover more categories in this section"}
+          </p>
         </div>
-        
+
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="w-full lg:w-1/4">
             <ListingFilters onFilterChange={handleFilterChange} />
           </div>
-          
-          <div className="w-full lg:w-3/4 overflow-y-auto max-h-[calc(100vh-100px)] scrollbar-hide">
+
+          <div className="w-full lg:w-3/4 overflow-y-auto max-h-[calc(110vh)] scrollbar-hide">
             <ListingGrid places={filteredPlaces} />
           </div>
         </div>
       </section>
     </div>
   );
-} 
+}

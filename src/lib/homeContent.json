@@ -11,16 +11,15 @@
     { "name": "Monuments", "icon": "monument", "href": "/monuments" },
     { "name": "Parks", "icon": "park", "href": "/parks" },
     { "name": "Memorials", "icon": "memorial", "href": "/memorials" },
-    { "name": "Fishing", "icon": "fish", "href": "/fishing-spots" },
+    { "name": "Fishing", "icon": "fish", "href": "/fishing-spot" },
     { "name": "Water Sports", "icon": "water", "href": "/water-sports" },
-    { "name": "Hiking", "icon": "hiking", "href": "/hiking" },
-    { "name": "Islands", "icon": "island", "href": "/islands" },
+    { "name": "Islands", "icon": "island", "href": "/island" },
     { "name": "Beaches", "icon": "beach", "href": "/beach" },
-    { "name": "Sports", "icon": "sports", "href": "/sports" },
-    { "name": "Tickets", "icon": "ticket", "href": "/tickets" }
+    { "name": "Golf ", "icon": "golf", "href": "/golf-courses" },
+    { "name": "Theater", "icon": "ticket", "href": "/theater" }
   ],
   "whyVisitDC": {
-    "badge": "Discover DC",
+    "badge": "Explore DC",
     "badgeColor": "from-amber-100 to-orange-100",
     "badgeTextColor": "text-amber-800",
     "title": "Why Washington DC is a Must-Visit City",
@@ -33,7 +32,7 @@
       { "icon": "park", "text": "Beautiful Parks & Gardens" }
     ],
     "ctaText": "Start Planning Your DC Adventure →",
-    "ctaLink": "/attractions",
+    "ctaLink": "/things-to-do",
     "image": "https://ik.imagekit.io/h7rza8886p/architecture-2025-03-15-05-09-37-utc.jpg?updatedAt=1754465975568",
     "stats": {
       "number": "15+",
@@ -82,7 +81,7 @@
       }
     ],
     "ctaText": "Plan Your Visit Today →",
-    "ctaLink": "/entertainment"
+    "ctaLink": "/contact"
   },
   "popularNow": {
     "badge": "Trending Now",

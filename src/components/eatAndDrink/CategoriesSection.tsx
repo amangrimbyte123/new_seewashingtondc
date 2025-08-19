@@ -7,42 +7,42 @@ import { GiBarbecue, GiMeal } from "react-icons/gi";
 const categories = [
   {
     name: "Restaurants",
-    href: "/eat-and-drink/restaurants/",
-    icon: <MdLocalDining className="text-primary text-2xl" />,
+    href: "/restaurants/",
+    icon: <MdLocalDining className="text-secondary text-2xl" />,
   },
   {
     name: "Bars",
-    href: "/eat-and-drink/bars/",
+    href: "/bar/",
     icon: <MdLocalBar className="text-secondary text-2xl" />,
   },
   {
     name: "Cafes",
-    href: "/eat-and-drink/cafes/",
-    icon: <MdLocalCafe className="text-primary text-2xl" />,
+    href: "/cafe/",
+    icon: <MdLocalCafe className="text-secondary text-2xl" />,
   },
   {
     name: "Coffee Shops",
-    href: "/eat-and-drink/coffee-shops/",
+    href: "/coffee-shop/",
     icon: <FaCoffee className="text-secondary text-2xl" />,
   },
   {
     name: "Lounges",
-    href: "/eat-and-drink/lounges/",
-    icon: <FaWineGlassAlt className="text-primary text-2xl" />,
+    href: "/lounges/",
+    icon: <FaWineGlassAlt className="text-secondary text-2xl" />,
   },
   {
     name: "BBQ",
-    href: "/eat-and-drink/bbq/",
+    href: "/bbq/",
     icon: <GiBarbecue className="text-secondary text-2xl" />,
   },
   {
     name: "Cuisine",
-    href: "/eat-and-drink/cuisine/",
-    icon: <GiMeal className="text-primary text-2xl" />,
+    href: "/cuisine/",
+    icon: <GiMeal className="text-secondary text-2xl" />,
   },
   {
     name: "Dining Experiences",
-    href: "/eat-and-drink/dining-experience/",
+    href: "/dining/",
     icon: <FaStar className="text-secondary text-2xl" />,
   },
 ];

@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 
 // Components
 import CategoryHeader from '@/components/categories/CategoryHeader';
@@ -71,32 +70,42 @@ export default function CategoryPageClient({
 
   if (!category) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white flex items-center justify-center px-4 py-12">
-        <div className="max-w-lg w-full text-center">
-          <div className="mb-8 animate-bounce">
-            <svg
-              className="mx-auto h-24 w-24 text-blue-500"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M12 14h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
+      <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-primary/5 via-white to-primary/5">
+        {/* Decorative background elements */}
+        <div aria-hidden="true" className="pointer-events-none absolute -top-24 -left-24 h-80 w-80 rounded-full bg-primary/10 blur-3xl opacity-70" />
+        <div aria-hidden="true" className="pointer-events-none absolute -bottom-24 -right-24 h-80 w-80 rounded-full bg-primary/10 blur-3xl opacity-70" />
+
+        <div className="relative z-10 max-w-2xl w-full mx-auto px-6 py-24 text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white/70 px-4 py-1 text-xs font-medium text-primary shadow-sm backdrop-blur">
+            <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
+            Error 404
           </div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Category Not Found</h2>
-          <p className="text-gray-600 mb-8">The category you're looking for doesn't exist or has been removed.</p>
-          <Link
-            href="/"
-            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
-          >
-            Return Home
-          </Link>
+
+          <h1 className="mt-6 text-4xl md:text-6xl font-extrabold tracking-tight">
+            <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Page not found</span>
+          </h1>
+          <p className="mt-4 text-base md:text-lg text-slate-600">
+            We couldn't find the page you're looking for!
+          </p>
+
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Link
+              href="/"
+              className="inline-flex items-center justify-center text-white rounded-md bg-primary px-6 py-3 text-primary-foreground shadow-sm transition hover:bg-primary/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+            >
+              Return Home
+            </Link>
+          </div>
+
+          <div className="mt-8 text-xs text-primary/70">
+            Or explore top sections:
+            <div className="mt-3 flex flex-wrap items-center justify-center gap-2">
+              <Link href="/things-to-do" className="rounded-full bg-primary/10 text-primary px-3 py-1 hover:bg-primary/20 transition">Things to do</Link>
+              <Link href="/eat-and-drink" className="rounded-full bg-primary/10 text-primary px-3 py-1 hover:bg-primary/20 transition">Eat & Drink</Link>
+              <Link href="/entertainment" className="rounded-full bg-primary/10 text-primary px-3 py-1 hover:bg-primary/20 transition">Entertainment</Link>
+              <Link href="/map" className="rounded-full bg-primary/10 text-primary px-3 py-1 hover:bg-primary/20 transition">Map</Link>
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -131,7 +140,7 @@ export default function CategoryPageClient({
           <div className="mb-8">
             <span className="px-4 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs font-medium mb-3 inline-block">Explore</span>
             <h2 className="text-3xl font-bold mb-2">Browse by Category</h2>
-            <p className="text-lg text-gray-600 max-w-2xl">Discover more categories in this section</p>
+            <p className="text-lg text-gray-600 max-w-2xl">{category.site_description || 'Discover more categories in this section'}</p>
           </div>
           <SubcategoryButtons subcategories={allSubcategories} categorySlug={categorySlug} />
         </section>
@@ -150,7 +159,7 @@ export default function CategoryPageClient({
             <ListingFilters onFilterChange={handleFilterChange} />
           </div>
           
-          <div className="w-full lg:w-3/4">
+          <div className="w-full lg:w-3/4 overflow-y-auto max-h-[calc(110vh)] scrollbar-hide">
             <ListingGrid places={filteredPlaces} />
           </div>
         </div>

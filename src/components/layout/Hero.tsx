@@ -89,9 +89,9 @@ export default function Hero({ title, subtitle, ctaText, ctaLink }: HeroProps) {
   };
 
   return (
-    <div className="relative h-[80vh] max-h-[800px] min-h-[600px] flex items-center justify-center overflow-hidden">
+    <div className="relative h-[80vh] max-h-[800px] min-h-[600px] flex items-center justify-center ">
       {/* Parallax Background Elements */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         {/* Main background image */}
         <div 
           className="h-full w-full relative transform transition-transform duration-1000 ease-out"
@@ -166,9 +166,9 @@ export default function Hero({ title, subtitle, ctaText, ctaLink }: HeroProps) {
             </div>
           </form>
           
-          {/* Search suggestions - relative positioning to scroll with page */}
+          {/* Search suggestions - fixed positioning to prevent overflow */}
           {isFocused && (
-            <div className="absolute top-full left-0 right-0 mt-2 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl z-[500] border border-gray-100">
+            <div className="absolute top-full left-0 right-0 mt-2 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl z-[9999] border border-gray-100 max-h-80 overflow-y-auto">
               <div className="mb-2">
                 <p className="text-sm font-medium text-gray-500">Popular Searches</p>
               </div>
@@ -179,7 +179,7 @@ export default function Hero({ title, subtitle, ctaText, ctaLink }: HeroProps) {
                       className="w-full text-left px-3 py-2 hover:bg-primary/5 rounded-lg flex items-center text-gray-700"
                       onClick={() => handleSuggestionClick(suggestion)}
                     >
-                      <span className="h-8 w-8 flex items-center justifycenter bg-primary/10 text-primary rounded-full mr-3">
+                      <span className="h-8 w-8 flex items-center justify-center bg-primary/10 text-primary rounded-full mr-3">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
@@ -194,19 +194,23 @@ export default function Hero({ title, subtitle, ctaText, ctaLink }: HeroProps) {
         </div>
       </div>
       
-      {/* Wave divider at bottom with parallax effect (nudged down to avoid hairline) */}
-      <div 
-        className="absolute bottom-[-1px] left-0 right-0 overflow-hidden z-10 pointer-events-none"
-        style={{ transform: `translateY(${scrollY * 0.1}px)` }}
-      >
-        <svg
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-          className="block h-16 w-full fill-white rotate-180"
-        >
-          <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"></path>
-        </svg>
-      </div>
+      {/* Wave divider at bottom with parallax effect - fixed positioning and styling */}
+{/* Wave divider at bottom with parallax effect - fixed positioning and styling */}
+{/* <div 
+  className="absolute bottom-0 left-0 right-0 overflow-hidden z-10 pointer-events-none"
+  style={{ transform: `translateY(${scrollY * 0.1}px)` }}
+>
+  <svg
+    viewBox="0 0 1200 120"
+    preserveAspectRatio="none"
+    className="block h-16 w-full fill-white rotate-180"
+    style={{ marginBottom: '0', paddingBottom: '0' }} // Adjust this to remove the black line
+  >
+    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"></path>
+  </svg>
+</div> */}
+
+
     </div>
   );
 }

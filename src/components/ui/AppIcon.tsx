@@ -44,7 +44,9 @@ import {
   FaGlobe,
   FaClock,
   FaArrowRight,
+  FaGolfBall,
 } from 'react-icons/fa';
+import { GiIsland } from 'react-icons/gi'; // Added import
 
 type IconName =
   | 'theater'
@@ -94,7 +96,8 @@ type IconName =
   | 'award'
   | 'globe'
   | 'clock'
-  | 'arrowRight';
+  | 'arrowRight'
+  | 'golf';
 
 const iconRegistry: Record<IconName, React.ComponentType<{ className?: string }>> = {
   theater: FaTheaterMasks,
@@ -110,7 +113,7 @@ const iconRegistry: Record<IconName, React.ComponentType<{ className?: string }>
   memorial: FaLandmark,
   park: FaTree,
   zoo: FaPaw,
-  island: FaWater,
+  island: GiIsland, // Updated to use GiIsland
   river: FaWater,
   water: FaWater,
   fish: FaFish,
@@ -145,6 +148,7 @@ const iconRegistry: Record<IconName, React.ComponentType<{ className?: string }>
   globe: FaGlobe,
   clock: FaClock,
   arrowRight: FaArrowRight,
+  golf: FaGolfBall,
 };
 
 export type AppIconProps = {
@@ -158,5 +162,3 @@ export default function AppIcon({ name, variant = 'primary', className }: AppIco
   const colorClass = variant === 'secondary' ? 'text-secondary' : 'text-primary';
   return <IconComponent className={`${colorClass} ${className ?? ''}`} />;
 }
-
-
